@@ -1,0 +1,31 @@
+{
+  "name": "vul-vue",
+  "version": "1.0.0",
+  "description": "An insult generator...for Vue!",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --inline --hot --progress",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "vue": "^2.0.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.16.0",
+    "css-loader": "^0.25.0",
+    "vue-loader": "^9.5.1",
+    "webpack": "^1.13.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blakecontreras/vul-vue.git"
+  },
+  "author": "Blake Contreras",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/blakecontreras/vul-vue/issues"
+  },
+  "homepage": "https://github.com/blakecontreras/vul-vue#readme"
+}
