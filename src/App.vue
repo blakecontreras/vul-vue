@@ -39,6 +39,9 @@
 </template>
 
 <script>
+// import Phrase from './phrase/Phrase.vue'
+// import AddWord from './words/AddWord.vue'
+
 export default {
   data() {
     return {
@@ -107,10 +110,34 @@ export default {
     };
   },
   methods: {
+    selectWord(word, wordType) {
+      if (wordType === 'adjective') {
+        if (this.selectedAdjective.selected !== null) {
+          this.selectedAdjective.selected = !this.selectedAdjective.selected;
+        }
+        this.selectedAdjective = word;
+      } else if (wordType === 'noun') {
+        if (this.selectedNoun.selected !== null) {
+          this.selectedNoun.selected = !this.selectedNoun.selected;
+        }
+        this.selectedNoun = word;
+      }
+      word.selected = !word.selected;
+    },
+
+    onWordAdded(event) {
+      if (event.adjective.text) {
+        this.adjectives.push(event.adjective)
+      }
+      if (event.noun.text) {
+        this.nouns.push(event.noun)
+      }
+    }
 
   },
   components: {
-
+    // Phrase,
+    // AddWord
   }
 };
 </script>
