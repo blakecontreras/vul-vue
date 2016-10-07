@@ -133,7 +133,6 @@ export default {
     },
 
     onWordAdded(event) {
-      console.log(event);
       if (event.adjective.text) {
         this.adjectives.push(event.adjective)
       }
