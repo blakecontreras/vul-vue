@@ -1,6 +1,6 @@
 <template lang="html">
 <div class="jumbotron">
-  <form v-on:submit="handleSubmit()" v-if="active">
+  <form v-on:submit="handleSubmit" v-if="active">
   <h4>Add Words Here!</h4>
     <div class="form-group">
       <input type="text" class="form-control" name="adjective" placeholder="Adjective"
@@ -29,8 +29,9 @@ export default {
     };
   },
   methods: {
-    handleSubmit() {
-      $emit('wordAdded', { adjective: newAdjective, noun: newNound });
+    handleSubmit(e) {
+      e.preventDefault();
+      this.$emit('wordAdded', { adjective: this.newAdjective, noun: this.newNoun });
     }
   }
 };

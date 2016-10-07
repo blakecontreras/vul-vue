@@ -34,7 +34,7 @@
     </div>
     <phrase :adjective="selectedAdjective" :noun="selectedNoun"></phrase>
     <div class="col-md-8 pull-right">
-      Add Word goes here
+    <add-word v-on:wordAdded="onWordAdded"></add-word>
     </div>
   </div>
 
@@ -46,7 +46,7 @@
 
 <script>
 import Phrase from './phrase/Phrase.vue'
-// import AddWord from './words/AddWord.vue'
+import AddWord from './words/AddWord.vue'
 
 export default {
   data() {
@@ -133,6 +133,7 @@ export default {
     },
 
     onWordAdded(event) {
+      console.log(event);
       if (event.adjective.text) {
         this.adjectives.push(event.adjective)
       }
@@ -143,8 +144,8 @@ export default {
 
   },
   components: {
-    Phrase
-    // AddWord
+    Phrase,
+    AddWord
   }
 };
 </script>
