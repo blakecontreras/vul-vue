@@ -1,47 +1,47 @@
 <template lang="html">
-  <div id="app">
-    <header>
-      <nav class="navbar">
-        <div class="navbar-header">
-          <a href="/" class="navbar-brand">The Vulgaritor</a>
-        </div>
-      </nav>
-    </header>
-
-    <div class="row">
-      <div class="col-md-4">
-        <h3>Build Your Insult</h3>
-        <div class="col-md-6">
-          <h3>Adjectives</h3>
-            <div v-for="adjective in adjectives"
-                  v-on:click="selectWord(adjective, 'adjective')"
-                  v-bind:style="{ 'cursor': 'pointer' }"
-                  v-bind:class="{ 'bg-primary': adjective.selected }"
-            >
-              {{ adjective.text }}
-            </div>
-          </div>
-        <div class="col-md-6">
-          <h3>Nouns</h3>
-          <div v-for="noun in nouns"
-                v-on:click="selectWord(noun, 'noun')"
-                v-bind:style="nounStyle"
-                v-bind:class="{ 'bg-primary': noun.selected }"
-          >
-            {{ noun.text }}
-          </div>
-        </div>
+<div id="app">
+  <header>
+    <nav class="navbar">
+      <div class="navbar-header">
+        <a href="/" class="navbar-brand">The Vulgaritor</a>
       </div>
-      <phrase :adjective="selectedAdjective" :noun="selectedNoun"></phrase>
-      <div class="col-md-8 pull-right">
-        Add Word goes here
+    </nav>
+  </header>
+
+  <div class="row">
+    <div class="col-md-4">
+      <h3>Build Your Insult</h3>
+      <div class="col-md-6">
+        <h3>Adjectives</h3>
+          <div v-for="adjective in adjectives"
+                v-on:click="selectWord(adjective, 'adjective')"
+                v-bind:style="{ 'cursor': 'pointer' }"
+                v-bind:class="{ 'bg-primary': adjective.selected }"
+          >
+            {{ adjective.text }}
+          </div>
+        </div>
+      <div class="col-md-6">
+        <h3>Nouns</h3>
+        <div v-for="noun in nouns"
+              v-on:click="selectWord(noun, 'noun')"
+              v-bind:style="nounStyle"
+              v-bind:class="{ 'bg-primary': noun.selected }"
+        >
+          {{ noun.text }}
+        </div>
       </div>
     </div>
-
-    <footer class="text-center">
-      &copy; 2016
-    </footer>
+    <phrase :adjective="selectedAdjective" :noun="selectedNoun"></phrase>
+    <div class="col-md-8 pull-right">
+      Add Word goes here
+    </div>
   </div>
+
+  <footer class="text-center">
+    &copy; 2016
+  </footer>
+</div>
 </template>
 
 <script>
@@ -150,5 +150,5 @@ export default {
 </script>
 
 <style lang="css">
-  .jumbotron { box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2); }
+.jumbotron { box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2); }
 </style>
