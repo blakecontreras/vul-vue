@@ -32,6 +32,11 @@ export default {
     handleSubmit(e) {
       e.preventDefault();
       this.$emit('wordAdded', { adjective: this.newAdjective, noun: this.newNoun });
+
+      this.newAdjective = { id: null, text: null, selected: false };
+      this.newNoun = { id: null, text: null, selected: false };
+      this.active = false;
+      setTimeout(() => this.active = true, 0);
     }
   }
 };
