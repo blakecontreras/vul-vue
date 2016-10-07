@@ -14,6 +14,9 @@
         <div class="col-md-6">
           <h3>Adjectives</h3>
             <div v-for="adjective in adjectives"
+                  v-on:click="selectWord(adjective, 'adjective')"
+                  v-bind:style="{ 'cursor': 'pointer' }"
+                  v-bind:class="{ 'bg-primary': adjective.selected }"
             >
               {{ adjective.text }}
             </div>
@@ -21,12 +24,15 @@
         <div class="col-md-6">
           <h3>Nouns</h3>
           <div v-for="noun in nouns"
+                v-on:click="selectWord(noun, 'noun')"
+                v-bind:style="nounStyle"
+                v-bind:class="{ 'bg-primary': noun.selected }"
           >
             {{ noun.text }}
           </div>
         </div>
       </div>
-      Phrase goes here
+      <phrase :adjective="selectedAdjective" :noun="selectedNoun"></phrase>
       <div class="col-md-8 pull-right">
         Add Word goes here
       </div>
@@ -39,7 +45,7 @@
 </template>
 
 <script>
-// import Phrase from './phrase/Phrase.vue'
+import Phrase from './phrase/Phrase.vue'
 // import AddWord from './words/AddWord.vue'
 
 export default {
@@ -107,6 +113,7 @@ export default {
       ],
       selectedAdjective: {id: null, text: "...", selected: null},
       selectedNoun: {id: null, text: "...", selected: null},
+      nounStyle: { cursor: "pointer" },
     };
   },
   methods: {
@@ -136,11 +143,12 @@ export default {
 
   },
   components: {
-    // Phrase,
+    Phrase
     // AddWord
   }
 };
 </script>
 
 <style lang="css">
+  .jumbotron { box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2); }
 </style>
